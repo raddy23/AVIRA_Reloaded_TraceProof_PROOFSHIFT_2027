@@ -1,0 +1,532 @@
+TAP version 13
+# Subtest: stable fingerprint across address and line number noise
+ok 1 - stable fingerprint across address and line number noise
+  ---
+  duration_ms: 2.642463
+  type: 'test'
+  ...
+# Subtest: known different build ID cannot be an exact or similar signature match
+ok 2 - known different build ID cannot be an exact or similar signature match
+  ---
+  duration_ms: 13.108035
+  type: 'test'
+  ...
+# Subtest: recorded fix verification never defaults to verified
+ok 3 - recorded fix verification never defaults to verified
+  ---
+  duration_ms: 0.911456
+  type: 'test'
+  ...
+# Subtest: GDB preferred if core exists and ASan reproduction unavailable
+ok 4 - GDB preferred if core exists and ASan reproduction unavailable
+  ---
+  duration_ms: 0.228215
+  type: 'test'
+  ...
+# Subtest: ASan preferred if core missing but rebuild and reproduction available
+ok 5 - ASan preferred if core missing but rebuild and reproduction available
+  ---
+  duration_ms: 0.185222
+  type: 'test'
+  ...
+# Subtest: no false recommendation when required data absent
+ok 6 - no false recommendation when required data absent
+  ---
+  duration_ms: 0.180896
+  type: 'test'
+  ...
+# Subtest: each option exposes reasons, advantages disadvantages effort overhead usefulness and verification
+ok 7 - each option exposes reasons, advantages disadvantages effort overhead usefulness and verification
+  ---
+  duration_ms: 0.336583
+  type: 'test'
+  ...
+# Subtest: malformed evidence rejected
+ok 8 - malformed evidence rejected
+  ---
+  duration_ms: 0.305067
+  type: 'test'
+  ...
+# Subtest: previous fixes keep separate verification evidence
+ok 9 - previous fixes keep separate verification evidence
+  ---
+  duration_ms: 0.442909
+  type: 'test'
+  ...
+# Subtest: Repeated request IDs cannot generate an unsupported PASS
+ok 10 - Repeated request IDs cannot generate an unsupported PASS
+  ---
+  duration_ms: 1.63086
+  type: 'test'
+  ...
+# Subtest: Equal timestamps cannot prove ordering
+ok 11 - Equal timestamps cannot prove ordering
+  ---
+  duration_ms: 0.359667
+  type: 'test'
+  ...
+# Subtest: Contradictory duplicate IDs are inconclusive
+ok 12 - Contradictory duplicate IDs are inconclusive
+  ---
+  duration_ms: 0.226472
+  type: 'test'
+  ...
+# Subtest: Contradictory IDs in other request invalidate both groups
+ok 13 - Contradictory IDs in other request invalidate both groups
+  ---
+  duration_ms: 0.220173
+  type: 'test'
+  ...
+# Subtest: Zero delay is an ordering ambiguity
+ok 14 - Zero delay is an ordering ambiguity
+  ---
+  duration_ms: 0.430951
+  type: 'test'
+  ...
+# Subtest: Duplicate response IDs for one request are inconclusive
+ok 15 - Duplicate response IDs for one request are inconclusive
+  ---
+  duration_ms: 0.228295
+  type: 'test'
+  ...
+# Subtest: Two independent conversations remain independent
+ok 16 - Two independent conversations remain independent
+  ---
+  duration_ms: 0.322333
+  type: 'test'
+  ...
+# Subtest: Response before request is inconclusive
+ok 17 - Response before request is inconclusive
+  ---
+  duration_ms: 0.185101
+  type: 'test'
+  ...
+# Subtest: Unsafe timestamp rejected
+ok 18 - Unsafe timestamp rejected
+  ---
+  duration_ms: 0.659747
+  type: 'test'
+  ...
+# Subtest: Non-number threshold rejected
+ok 19 - Non-number threshold rejected
+  ---
+  duration_ms: 0.479082
+  type: 'test'
+  ...
+# Subtest: Prototype-control strings are safe as map keys
+ok 20 - Prototype-control strings are safe as map keys
+  ---
+  duration_ms: 0.337144
+  type: 'test'
+  ...
+# Subtest: ASCII control characters in IDs rejected
+ok 21 - ASCII control characters in IDs rejected
+  ---
+  duration_ms: 0.17031
+  type: 'test'
+  ...
+# Subtest: Oversized event array rejected
+ok 22 - Oversized event array rejected
+  ---
+  duration_ms: 0.806843
+  type: 'test'
+  ...
+# Subtest: Normal after deadline remains violation
+ok 23 - Normal after deadline remains violation
+  ---
+  duration_ms: 0.149178
+  type: 'test'
+  ...
+# Subtest: Boundary deadline is pass
+ok 24 - Boundary deadline is pass
+  ---
+  duration_ms: 0.132935
+  type: 'test'
+  ...
+# Subtest: What-if changing threshold does not claim fix
+ok 25 - What-if changing threshold does not claim fix
+  ---
+  duration_ms: 1.98489
+  type: 'test'
+  ...
+# Subtest: What-if ambiguous source remains unsupported
+ok 26 - What-if ambiguous source remains unsupported
+  ---
+  duration_ms: 0.188627
+  type: 'test'
+  ...
+# Subtest: What-if deterministic
+ok 27 - What-if deterministic
+  ---
+  duration_ms: 1.032623
+  type: 'test'
+  ...
+# Subtest: Export includes honest limitations
+ok 28 - Export includes honest limitations
+  ---
+  duration_ms: 0.317856
+  type: 'test'
+  ...
+# Subtest: Samples healthy delayed and missing
+ok 29 - Samples healthy delayed and missing
+  ---
+  duration_ms: 0.157992
+  type: 'test'
+  ...
+# Subtest: Rejected massive IDs
+ok 30 - Rejected massive IDs
+  ---
+  duration_ms: 0.152533
+  type: 'test'
+  ...
+# Subtest: Malicious-looking log ID remains data
+ok 31 - Malicious-looking log ID remains data
+  ---
+  duration_ms: 0.144602
+  type: 'test'
+  ...
+# Subtest: late case proposes two evidence-linked experiments
+ok 32 - late case proposes two evidence-linked experiments
+  ---
+  duration_ms: 3.943941
+  type: 'test'
+  ...
+# Subtest: healthy trace receives no repair proposals
+ok 33 - healthy trace receives no repair proposals
+  ---
+  duration_ms: 0.298247
+  type: 'test'
+  ...
+# Subtest: ambiguous trace receives no repair proposals
+ok 34 - ambiguous trace receives no repair proposals
+  ---
+  duration_ms: 0.254493
+  type: 'test'
+  ...
+# Subtest: human approval gate prevents execution
+ok 35 - human approval gate prevents execution
+  ---
+  duration_ms: 0.427236
+  type: 'test'
+  ...
+# Subtest: faster simulated response meets original deadline
+ok 36 - faster simulated response meets original deadline
+  ---
+  duration_ms: 0.66877
+  type: 'test'
+  ...
+# Subtest: slow simulated response remains violation
+ok 37 - slow simulated response remains violation
+  ---
+  duration_ms: 0.236497
+  type: 'test'
+  ...
+# Subtest: relaxed threshold changes classification not measured elapsed time
+ok 38 - relaxed threshold changes classification not measured elapsed time
+  ---
+  duration_ms: 0.411864
+  type: 'test'
+  ...
+# Subtest: invalid proposal rejected after approval
+ok 39 - invalid proposal rejected after approval
+  ---
+  duration_ms: 0.53235
+  type: 'test'
+  ...
+# Subtest: invalid delay rejected
+ok 40 - invalid delay rejected
+  ---
+  duration_ms: 0.481596
+  type: 'test'
+  ...
+# Subtest: three well-labeled cases are available
+ok 41 - three well-labeled cases are available
+  ---
+  duration_ms: 1.604412
+  type: 'test'
+  ...
+# Subtest: checkout identifies payment operation with source evidence
+ok 42 - checkout identifies payment operation with source evidence
+  ---
+  duration_ms: 1.068356
+  type: 'test'
+  ...
+# Subtest: automotive identifies slow service with evidence
+ok 43 - automotive identifies slow service with evidence
+  ---
+  duration_ms: 0.310996
+  type: 'test'
+  ...
+# Subtest: incomplete event produces inconclusive and no fixes
+ok 44 - incomplete event produces inconclusive and no fixes
+  ---
+  duration_ms: 0.420426
+  type: 'test'
+  ...
+# Subtest: unapproved proposal never executes
+ok 45 - unapproved proposal never executes
+  ---
+  duration_ms: 0.369782
+  type: 'test'
+  ...
+# Subtest: simulated faster response meets original deadline
+ok 46 - simulated faster response meets original deadline
+  ---
+  duration_ms: 0.398604
+  type: 'test'
+  ...
+# Subtest: relaxing deadline does not change actual duration
+ok 47 - relaxing deadline does not change actual duration
+  ---
+  duration_ms: 0.330555
+  type: 'test'
+  ...
+# Subtest: unknown scenario rejected
+ok 48 - unknown scenario rejected
+  ---
+  duration_ms: 0.383031
+  type: 'test'
+  ...
+# Subtest: unsupported proposal rejected
+ok 49 - unsupported proposal rejected
+  ---
+  duration_ms: 0.407507
+  type: 'test'
+  ...
+# Subtest: incomplete case cannot complete proposed experiment
+ok 50 - incomplete case cannot complete proposed experiment
+  ---
+  duration_ms: 0.732314
+  type: 'test'
+  ...
+# Subtest: sample data cannot be modified across investigations
+ok 51 - sample data cannot be modified across investigations
+  ---
+  duration_ms: 0.239962
+  type: 'test'
+  ...
+# Subtest: serves complete browser dashboard, assets and healthy API
+ok 52 - serves complete browser dashboard, assets and healthy API
+  ---
+  duration_ms: 167.863271
+  type: 'test'
+  ...
+# Subtest: crash recurrence, durable record, proposed action and attested verification
+ok 53 - crash recurrence, durable record, proposed action and attested verification
+  ---
+  duration_ms: 183.523545
+  type: 'test'
+  ...
+# Subtest: rejects malformed crash and invalid evidence status
+ok 54 - rejects malformed crash and invalid evidence status
+  ---
+  duration_ms: 118.166858
+  type: 'test'
+  ...
+# Subtest: baseline evidence reproduces the reported timing violation
+ok 55 - baseline evidence reproduces the reported timing violation
+  ---
+  duration_ms: 0.967829
+  type: 'test'
+  ...
+# Subtest: approved synthetic intervention matches the recorded expectation
+ok 56 - approved synthetic intervention matches the recorded expectation
+  ---
+  duration_ms: 0.190489
+  type: 'test'
+  ...
+# Subtest: proof pack cannot be created without explicit approval
+ok 57 - proof pack cannot be created without explicit approval
+  ---
+  duration_ms: 2.235376
+  type: 'test'
+  ...
+# Subtest: approved checkout yields a portable regression recipe with source IDs
+ok 58 - approved checkout yields a portable regression recipe with source IDs
+  ---
+  duration_ms: 1.936358
+  type: 'test'
+  ...
+# Subtest: changing only acceptance policy does not imply physical improvement
+ok 59 - changing only acceptance policy does not imply physical improvement
+  ---
+  duration_ms: 0.343343
+  type: 'test'
+  ...
+# Subtest: incomplete evidence never exports a proved violation regression test
+ok 60 - incomplete evidence never exports a proved violation regression test
+  ---
+  duration_ms: 0.378585
+  type: 'test'
+  ...
+# Subtest: unsupported scenarios and proposal IDs are rejected
+ok 61 - unsupported scenarios and proposal IDs are rejected
+  ---
+  duration_ms: 0.704973
+  type: 'test'
+  ...
+# Subtest: checkout baseline violation and approved faster PASS
+ok 62 - checkout baseline violation and approved faster PASS
+  ---
+  duration_ms: 0.758562
+  type: 'test'
+  ...
+# Subtest: changing only deadline does not modify duration
+ok 63 - changing only deadline does not modify duration
+  ---
+  duration_ms: 0.281042
+  type: 'test'
+  ...
+# Subtest: unapproved run does not display synthetic result
+ok 64 - unapproved run does not display synthetic result
+  ---
+  duration_ms: 0.116882
+  type: 'test'
+  ...
+# Subtest: incomplete evidence remains inconclusive
+ok 65 - incomplete evidence remains inconclusive
+  ---
+  duration_ms: 0.158181
+  type: 'test'
+  ...
+# Subtest: malformed and unsafe numbers become unknown
+ok 66 - malformed and unsafe numbers become unknown
+  ---
+  duration_ms: 0.122429
+  type: 'test'
+  ...
+# Subtest: Purpose guide is user-controlled and accessible
+ok 67 - Purpose guide is user-controlled and accessible
+  ---
+  duration_ms: 1.101806
+  type: 'test'
+  ...
+# Subtest: Purpose guide describes problem, solution, domain and shared AI action without overclaims
+ok 68 - Purpose guide describes problem, solution, domain and shared AI action without overclaims
+  ---
+  duration_ms: 0.34088
+  type: 'test'
+  ...
+# Subtest: registers route in standard index-only config
+ok 69 - registers route in standard index-only config
+  ---
+  duration_ms: 1.854018
+  type: 'test'
+  ...
+# Subtest: does not duplicate existing route
+ok 70 - does not duplicate existing route
+  ---
+  duration_ms: 0.793964
+  type: 'test'
+  ...
+# Subtest: retains nested route arrays
+ok 71 - retains nested route arrays
+  ---
+  duration_ms: 0.200324
+  type: 'test'
+  ...
+# Subtest: fails closed for non-array routing config
+ok 72 - fails closed for non-array routing config
+  ---
+  duration_ms: 0.339818
+  type: 'test'
+  ...
+# Subtest: idempotent when run twice
+ok 73 - idempotent when run twice
+  ---
+  duration_ms: 0.197379
+  type: 'test'
+  ...
+# Subtest: normal case
+ok 74 - normal case
+  ---
+  duration_ms: 4.136514
+  type: 'test'
+  ...
+# Subtest: threshold exactly pass
+ok 75 - threshold exactly pass
+  ---
+  duration_ms: 0.517939
+  type: 'test'
+  ...
+# Subtest: above threshold violation
+ok 76 - above threshold violation
+  ---
+  duration_ms: 0.27979
+  type: 'test'
+  ...
+# Subtest: empty inconclusive
+ok 77 - empty inconclusive
+  ---
+  duration_ms: 0.230428
+  type: 'test'
+  ...
+# Subtest: missing response inconclusive
+ok 78 - missing response inconclusive
+  ---
+  duration_ms: 0.359297
+  type: 'test'
+  ...
+# Subtest: reordered input still matches
+ok 79 - reordered input still matches
+  ---
+  duration_ms: 0.509407
+  type: 'test'
+  ...
+# Subtest: orphan response inconclusive
+ok 80 - orphan response inconclusive
+  ---
+  duration_ms: 0.344084
+  type: 'test'
+  ...
+# Subtest: duplicate ID warned
+ok 81 - duplicate ID warned
+  ---
+  duration_ms: 0.288062
+  type: 'test'
+  ...
+# Subtest: invalid negative timestamp rejected
+ok 82 - invalid negative timestamp rejected
+  ---
+  duration_ms: 0.881893
+  type: 'test'
+  ...
+# Subtest: invalid threshold rejected
+ok 83 - invalid threshold rejected
+  ---
+  duration_ms: 0.730811
+  type: 'test'
+  ...
+# Subtest: max events rejects oversized
+ok 84 - max events rejects oversized
+  ---
+  duration_ms: 3.551576
+  type: 'test'
+  ...
+# Subtest: replay is deterministic
+ok 85 - replay is deterministic
+  ---
+  duration_ms: 1.45286
+  type: 'test'
+  ...
+# Subtest: replay delay indicates failure
+ok 86 - replay delay indicates failure
+  ---
+  duration_ms: 0.264768
+  type: 'test'
+  ...
+# Subtest: high volume 20000 pairs
+ok 87 - high volume 20000 pairs
+  ---
+  duration_ms: 141.072486
+  type: 'test'
+  ...
+1..87
+# tests 87
+# suites 0
+# pass 87
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 651.00988

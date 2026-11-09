@@ -1,0 +1,15 @@
+AVIRA_Reloaded_TraceProof_PROOFSHIFT_2027 — FINAL HANDOFF
+
+1) Extract this ZIP; open Windows PowerShell inside AVIRA_TraceProof_FINAL_LIGHT_READY.
+2) Run: powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\INSTALL_AND_VERIFY.ps1"
+3) If the TypeScript check passes: cd "$HOME\AVIRA-Hackathon\avira-traceproof-agent" ; pnpm.cmd dev
+4) Open exactly http://localhost:8080/traceproof (use server's displayed port).
+5) Click Purpose; choose Try e-commerce; Analyze evidence. Expect VIOLATION: 180 ms vs 100 ms.
+6) Approve the synthetic 80 ms response; run what-if and export the report.
+7) In /home ask the connected agent to call analyze-trace with the same events. Verify REAL tool invocation.
+8) Record a PUBLIC Builder.io Clips demo and check sharing without login.
+9) Submit at https://www.builder.io/hackathon/submit. Public Clips required; GitHub and slides optional.
+10) Use docs/SUBMISSION_FIELDS.md for exact form details and docs/GITHUB_PUBLISH_WINDOWS.md for repo creation.
+
+This is a source overlay for the official starter, not a complete independent Agent-Native project.
+Local deterministic tests passed. Windows runtime and AI integration must be checked on the user's machine.

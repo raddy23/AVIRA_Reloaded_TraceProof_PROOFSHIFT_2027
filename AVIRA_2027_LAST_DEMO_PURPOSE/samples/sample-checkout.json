@@ -1,0 +1,14 @@
+[
+  {
+    "id": "payment-req",
+    "requestId": "checkout-42",
+    "timestampMs": 1000,
+    "type": "REQUEST"
+  },
+  {
+    "id": "payment-resp",
+    "requestId": "checkout-42",
+    "timestampMs": 1180,
+    "type": "RESPONSE"
+  }
+]

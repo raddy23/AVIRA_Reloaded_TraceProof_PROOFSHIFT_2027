@@ -1,0 +1,63 @@
+[
+  {
+    "id": "crash-001",
+    "occurredAt": "2026-11-06T09:00:00Z",
+    "crash": {
+      "executable": "vehicle-service",
+      "signal": "SIGSEGV",
+      "architecture": "x86_64",
+      "buildId": "demo-build-17",
+      "frames": [
+        "#0  SensorManager::read() at sensor.cpp:144",
+        "#1  ServiceWorker::execute() at worker.cpp:87",
+        "#2  main() at main.cpp:31"
+      ]
+    },
+    "verification": "UNVERIFIED",
+    "evidenceIds": [
+      "bt-001",
+      "core-meta-001"
+    ],
+    "fixId": "fix-001"
+  },
+  {
+    "id": "crash-002",
+    "occurredAt": "2026-11-07T11:10:00Z",
+    "crash": {
+      "executable": "vehicle-service",
+      "signal": "SIGSEGV",
+      "architecture": "x86_64",
+      "buildId": "demo-build-17",
+      "frames": [
+        "#0  SensorManager::read() at sensor.cpp:142",
+        "#1  ServiceWorker::execute() at worker.cpp:87",
+        "#2  main() at main.cpp:31"
+      ]
+    },
+    "verification": "REPRODUCED_NOT_FIXED",
+    "evidenceIds": [
+      "bt-002"
+    ],
+    "fixId": null
+  },
+  {
+    "id": "crash-003",
+    "occurredAt": "2026-11-07T13:45:00Z",
+    "crash": {
+      "executable": "vehicle-service",
+      "signal": "SIGSEGV",
+      "architecture": "x86_64",
+      "buildId": "demo-build-18",
+      "frames": [
+        "#0  SensorManager::read() at sensor.cpp:142",
+        "#1  ServiceWorker::execute() at worker.cpp:87",
+        "#2  main() at main.cpp:31"
+      ]
+    },
+    "verification": "UNVERIFIED",
+    "evidenceIds": [
+      "bt-003"
+    ],
+    "fixId": null
+  }
+]

@@ -1,0 +1,7 @@
+AVIRA TraceProof — final 2027 project overlay
+
+FIRST TIME: See README.md section Start from scratch — Windows.
+ALREADY INSTALLED: Extract ZIP; cd to extracted AVIRA_TraceProof_2026_WORKFLOW_REDESIGN; run powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\INSTALL_AND_VERIFY.ps1"
+Then cd "$HOME\AVIRA-Hackathon\avira-traceproof-agent" and run pnpm.cmd dev.
+Open http://localhost:8080/traceproof.
+Click Purpose; to load your own logs look for the GREEN Upload your logs here card.

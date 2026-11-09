@@ -1,0 +1,18 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {analyzeTrace,replayScenario} from '../lib/traceproof.mjs';
+const pair=(delay)=>[{id:'a',requestId:'x',timestampMs:100,type:'REQUEST'},{id:'b',requestId:'x',timestampMs:100+delay,type:'RESPONSE'}];
+test('normal case',()=>assert.equal(analyzeTrace(pair(5)).status,'PASS'));
+test('threshold exactly pass',()=>assert.equal(analyzeTrace(pair(10)).status,'PASS'));
+test('above threshold violation',()=>assert.equal(analyzeTrace(pair(11)).status,'VIOLATION'));
+test('empty inconclusive',()=>assert.equal(analyzeTrace([]).status,'INCONCLUSIVE'));
+test('missing response inconclusive',()=>assert.equal(analyzeTrace(pair(1).slice(0,1)).status,'INCONCLUSIVE'));
+test('reordered input still matches',()=>assert.equal(analyzeTrace(pair(11).reverse()).status,'VIOLATION'));
+test('orphan response inconclusive',()=>assert.equal(analyzeTrace(pair(1).slice(1)).status,'INCONCLUSIVE'));
+test('duplicate ID warned',()=>assert.equal(analyzeTrace([...pair(1),pair(1)[1]]).warnings[0].code,'DUPLICATE_EVENT'));
+test('invalid negative timestamp rejected',()=>assert.throws(()=>analyzeTrace([{id:'x',requestId:'x',timestampMs:-1,type:'REQUEST'}])));
+test('invalid threshold rejected',()=>assert.throws(()=>analyzeTrace(pair(3),{thresholdMs:0})));
+test('max events rejects oversized',()=>assert.throws(()=>analyzeTrace(Array(100001).fill(null))));
+test('replay is deterministic',()=>assert.deepEqual(replayScenario(),replayScenario()));
+test('replay delay indicates failure',()=>assert.equal(replayScenario().result.status,'VIOLATION'));
+test('high volume 20000 pairs',()=>{const e=[];for(let i=0;i<20000;i++){e.push({id:`req${i}`,requestId:`r${i}`,timestampMs:i*30,type:'REQUEST'},{id:`res${i}`,requestId:`r${i}`,timestampMs:i*30+8,type:'RESPONSE'});}assert.equal(analyzeTrace(e).findings.length,20000)});

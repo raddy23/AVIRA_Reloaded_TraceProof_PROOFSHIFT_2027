@@ -1,0 +1,226 @@
+TAP version 13
+# Subtest: Repeated request IDs cannot generate an unsupported PASS
+ok 1 - Repeated request IDs cannot generate an unsupported PASS
+  ---
+  duration_ms: 1.23669
+  type: 'test'
+  ...
+# Subtest: Equal timestamps cannot prove ordering
+ok 2 - Equal timestamps cannot prove ordering
+  ---
+  duration_ms: 0.338248
+  type: 'test'
+  ...
+# Subtest: Contradictory duplicate IDs are inconclusive
+ok 3 - Contradictory duplicate IDs are inconclusive
+  ---
+  duration_ms: 0.162034
+  type: 'test'
+  ...
+# Subtest: Contradictory IDs in other request invalidate both groups
+ok 4 - Contradictory IDs in other request invalidate both groups
+  ---
+  duration_ms: 0.191378
+  type: 'test'
+  ...
+# Subtest: Zero delay is an ordering ambiguity
+ok 5 - Zero delay is an ordering ambiguity
+  ---
+  duration_ms: 0.333262
+  type: 'test'
+  ...
+# Subtest: Duplicate response IDs for one request are inconclusive
+ok 6 - Duplicate response IDs for one request are inconclusive
+  ---
+  duration_ms: 0.169665
+  type: 'test'
+  ...
+# Subtest: Two independent conversations remain independent
+ok 7 - Two independent conversations remain independent
+  ---
+  duration_ms: 0.190216
+  type: 'test'
+  ...
+# Subtest: Response before request is inconclusive
+ok 8 - Response before request is inconclusive
+  ---
+  duration_ms: 0.173151
+  type: 'test'
+  ...
+# Subtest: Unsafe timestamp rejected
+ok 9 - Unsafe timestamp rejected
+  ---
+  duration_ms: 0.589737
+  type: 'test'
+  ...
+# Subtest: Non-number threshold rejected
+ok 10 - Non-number threshold rejected
+  ---
+  duration_ms: 0.377578
+  type: 'test'
+  ...
+# Subtest: Prototype-control strings are safe as map keys
+ok 11 - Prototype-control strings are safe as map keys
+  ---
+  duration_ms: 0.171378
+  type: 'test'
+  ...
+# Subtest: ASCII control characters in IDs rejected
+ok 12 - ASCII control characters in IDs rejected
+  ---
+  duration_ms: 0.13313
+  type: 'test'
+  ...
+# Subtest: Oversized event array rejected
+ok 13 - Oversized event array rejected
+  ---
+  duration_ms: 0.608515
+  type: 'test'
+  ...
+# Subtest: Normal after deadline remains violation
+ok 14 - Normal after deadline remains violation
+  ---
+  duration_ms: 0.099169
+  type: 'test'
+  ...
+# Subtest: Boundary deadline is pass
+ok 15 - Boundary deadline is pass
+  ---
+  duration_ms: 0.093491
+  type: 'test'
+  ...
+# Subtest: What-if changing threshold does not claim fix
+ok 16 - What-if changing threshold does not claim fix
+  ---
+  duration_ms: 1.084742
+  type: 'test'
+  ...
+# Subtest: What-if ambiguous source remains unsupported
+ok 17 - What-if ambiguous source remains unsupported
+  ---
+  duration_ms: 0.134332
+  type: 'test'
+  ...
+# Subtest: What-if deterministic
+ok 18 - What-if deterministic
+  ---
+  duration_ms: 0.715997
+  type: 'test'
+  ...
+# Subtest: Export includes honest limitations
+ok 19 - Export includes honest limitations
+  ---
+  duration_ms: 0.208033
+  type: 'test'
+  ...
+# Subtest: Samples healthy delayed and missing
+ok 20 - Samples healthy delayed and missing
+  ---
+  duration_ms: 0.117497
+  type: 'test'
+  ...
+# Subtest: Rejected massive IDs
+ok 21 - Rejected massive IDs
+  ---
+  duration_ms: 0.160711
+  type: 'test'
+  ...
+# Subtest: Malicious-looking log ID remains data
+ok 22 - Malicious-looking log ID remains data
+  ---
+  duration_ms: 0.083186
+  type: 'test'
+  ...
+# Subtest: normal case
+ok 23 - normal case
+  ---
+  duration_ms: 2.002392
+  type: 'test'
+  ...
+# Subtest: threshold exactly pass
+ok 24 - threshold exactly pass
+  ---
+  duration_ms: 0.29238
+  type: 'test'
+  ...
+# Subtest: above threshold violation
+ok 25 - above threshold violation
+  ---
+  duration_ms: 0.117526
+  type: 'test'
+  ...
+# Subtest: empty inconclusive
+ok 26 - empty inconclusive
+  ---
+  duration_ms: 0.085298
+  type: 'test'
+  ...
+# Subtest: missing response inconclusive
+ok 27 - missing response inconclusive
+  ---
+  duration_ms: 0.142435
+  type: 'test'
+  ...
+# Subtest: reordered input still matches
+ok 28 - reordered input still matches
+  ---
+  duration_ms: 0.20611
+  type: 'test'
+  ...
+# Subtest: orphan response inconclusive
+ok 29 - orphan response inconclusive
+  ---
+  duration_ms: 0.156766
+  type: 'test'
+  ...
+# Subtest: duplicate ID warned
+ok 30 - duplicate ID warned
+  ---
+  duration_ms: 0.115013
+  type: 'test'
+  ...
+# Subtest: invalid negative timestamp rejected
+ok 31 - invalid negative timestamp rejected
+  ---
+  duration_ms: 0.460323
+  type: 'test'
+  ...
+# Subtest: invalid threshold rejected
+ok 32 - invalid threshold rejected
+  ---
+  duration_ms: 0.329556
+  type: 'test'
+  ...
+# Subtest: max events rejects oversized
+ok 33 - max events rejects oversized
+  ---
+  duration_ms: 0.696678
+  type: 'test'
+  ...
+# Subtest: replay is deterministic
+ok 34 - replay is deterministic
+  ---
+  duration_ms: 0.689537
+  type: 'test'
+  ...
+# Subtest: replay delay indicates failure
+ok 35 - replay delay indicates failure
+  ---
+  duration_ms: 0.131328
+  type: 'test'
+  ...
+# Subtest: high volume 20000 pairs
+ok 36 - high volume 20000 pairs
+  ---
+  duration_ms: 63.628689
+  type: 'test'
+  ...
+1..36
+# tests 36
+# suites 0
+# pass 36
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 162.155736

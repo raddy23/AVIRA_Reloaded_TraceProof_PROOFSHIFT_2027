@@ -1,0 +1,29 @@
+AVIRA_Reloaded_TraceProof_PROOFSHIFT_2027 — FINAL START GUIDE
+
+1. STOP any previous `pnpm dev` using Ctrl+C.
+2. Extract ZIP; open PowerShell in the extracted folder.
+3. Run:
+   powershell.exe -NoProfile -ExecutionPolicy Bypass -File ".\INSTALL_AND_VERIFY.ps1"
+4. If you see PASS: TypeScript check, run:
+   cd "$HOME\AVIRA-Hackathon\avira-traceproof-agent"
+   pnpm.cmd dev
+5. Open http://localhost:8080/traceproof (type manually, no extra characters).
+6. Click Purpose & how it works. Try e-commerce -> Analyze evidence.
+   Expected: 180 ms observed, 100 ms limit, VIOLATION.
+   Approve 80 ms synthetic response; inspect simulated result and Export JSON.
+7. Open http://localhost:8080/home in second tab; connect an AI provider and ask:
+   Call the analyze-trace action with events
+   [{"id":"payment-req","requestId":"checkout-42","timestampMs":1000,"type":"REQUEST"},
+   {"id":"payment-resp","requestId":"checkout-42","timestampMs":1180,"type":"RESPONSE"}]
+   and thresholdMs 100. Cite source event IDs.
+   Confirm the ACTION IS ACTUALLY CALLED in chat; text alone does not count.
+8. Record a PUBLIC Clips demo. Submit at https://www.builder.io/hackathon/submit
+
+TESTS FROM THE EXTRACTED ZIP FOLDER:
+   node --test tests/*.test.mjs
+
+If /traceproof remains 404, check the new registration in:
+   Get-Content "$HOME\AVIRA-Hackathon\avira-traceproof-agent\app\routes.ts"
+
+Production build/deployment requires BETTER_AUTH_SECRET and a persistent Postgres URL.
+Local demo does not need production database setup. Never commit secrets, .env or private logs.

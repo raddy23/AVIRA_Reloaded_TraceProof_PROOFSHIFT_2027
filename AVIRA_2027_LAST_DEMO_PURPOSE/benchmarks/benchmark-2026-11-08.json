@@ -1,0 +1,15 @@
+{
+  "node": "v22.16.0",
+  "pairs": 10000,
+  "events": 20000,
+  "runs": 50,
+  "medianMs": 7.9400229999999965,
+  "p95Ms": 18.302540000000022,
+  "p99Ms": 18.59119499999997,
+  "throughputEventsPerSecond": 2518884.3911409336,
+  "processCpuUserMs": 603.292,
+  "processCpuSystemMs": 201.605,
+  "processRssBeforeMB": 94.63671875,
+  "processRssAfterMB": 123.40625,
+  "note": "Local synthetic benchmark. Includes Node runtime and input arrays; excludes UI and AI provider."
+}

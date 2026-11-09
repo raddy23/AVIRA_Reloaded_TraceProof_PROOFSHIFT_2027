@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "scenario": "checkout",
+  "sourceType": "SYNTHETIC_DEMONSTRATION",
+  "baseline": {
+    "events": [
+      {
+        "id": "payment-req",
+        "requestId": "checkout-42",
+        "timestampMs": 1000,
+        "type": "REQUEST"
+      },
+      {
+        "id": "payment-resp",
+        "requestId": "checkout-42",
+        "timestampMs": 1180,
+        "type": "RESPONSE"
+      }
+    ],
+    "thresholdMs": 100,
+    "expectedStatus": "VIOLATION",
+    "observedMs": 180,
+    "sourceEventIds": [
+      "payment-req",
+      "payment-resp"
+    ]
+  },
+  "intervention": {
+    "kind": "reduce-delay",
+    "proposedDelayMs": 80,
+    "expectedStatus": "PASS"
+  },
+  "limitations": [
+    "Does not prove production root cause",
+    "Does not modify source code or a real system",
+    "Human-approved model intervention, not measured production improvement"
+  ]
+}

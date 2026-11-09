@@ -1,0 +1,14 @@
+[
+  {
+    "id": "someip-req",
+    "requestId": "ecu-7",
+    "timestampMs": 200,
+    "type": "REQUEST"
+  },
+  {
+    "id": "someip-resp",
+    "requestId": "ecu-7",
+    "timestampMs": 218,
+    "type": "RESPONSE"
+  }
+]

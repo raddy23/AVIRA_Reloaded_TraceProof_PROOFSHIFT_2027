@@ -1,0 +1,12 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {SAMPLE_TRACES,proposeExperiment,evaluateApprovedExperiment} from '../lib/traceproof.mjs';
+const events=SAMPLE_TRACES.delayed;
+test('late case proposes two evidence-linked experiments',()=>{const p=proposeExperiment({events,thresholdMs:10});assert.equal(p.proposals.length,2);assert.deepEqual(p.proposals[0].evidence,['request-A','response-A']);});
+test('healthy trace receives no repair proposals',()=>assert.equal(proposeExperiment({events:SAMPLE_TRACES.healthy}).proposals.length,0));
+test('ambiguous trace receives no repair proposals',()=>assert.equal(proposeExperiment({events:SAMPLE_TRACES.ambiguous}).proposals.length,0));
+test('human approval gate prevents execution',()=>assert.equal(evaluateApprovedExperiment({events,thresholdMs:10,proposalId:'reduce-delay'}).status,'AWAITING_HUMAN_APPROVAL'));
+test('faster simulated response meets original deadline',()=>{const r=evaluateApprovedExperiment({events,thresholdMs:10,proposalId:'reduce-delay',approved:true,proposedDelayMs:7});assert.equal(r.experiment.result.status,'PASS');assert.match(r.claim,/real system repair not established/);});
+test('slow simulated response remains violation',()=>assert.equal(evaluateApprovedExperiment({events,thresholdMs:10,proposalId:'reduce-delay',approved:true,proposedDelayMs:20}).experiment.result.status,'VIOLATION'));
+test('relaxed threshold changes classification not measured elapsed time',()=>{const r=evaluateApprovedExperiment({events,thresholdMs:10,proposalId:'relax-deadline',approved:true,proposedThresholdMs:20});assert.equal(r.comparison.status,'PASS');assert.equal(r.comparison.findings[0].elapsedMs,18);assert.match(r.claim,/does not improve actual response time/);});
+test('invalid proposal rejected after approval',()=>assert.throws(()=>evaluateApprovedExperiment({events,proposalId:'unknown',approved:true}),/Unknown/));
+test('invalid delay rejected',()=>assert.throws(()=>evaluateApprovedExperiment({events,proposalId:'reduce-delay',approved:true,proposedDelayMs:-5}),/Invalid delay/));
